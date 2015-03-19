@@ -1,0 +1,16 @@
+<div class="collapse" id="collapseExample" aria-expanded="false">
+  <hr>
+  <div class="well">
+    <%= form_tag log_in_path, :class => 'form' do %>
+    <div class="form-group">
+      <%= label_tag :email %>
+      <%= text_field_tag :email, nil, :placeholder => 'Enter E-Mail', :class => 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :password %>
+      <%= password_field_tag :password, nil, :placeholder => 'Enter Password', :class => 'form-control' %>
+    </div>
+    <%= submit_tag "Log in", :class => 'btn btn-success' %>
+    <% end %>
+  </div>
+</div>

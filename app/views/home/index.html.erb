@@ -1,0 +1,39 @@
+<h1>Hello!</h1>
+
+<% if current_user.blank? %>
+  <h4>No Current User</h4>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Log Me In</a>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">Sign Up</a>
+  <%= render '/sessions/form' %>
+  <%= render '/users/form' %>
+<% else %>
+  <h4><%= current_user.email %></h4>
+  <h4><%= link_to 'Log Out', log_out_path, :class => 'btn btn-danger' %> </h4>
+<% end %>
+
+<hr>
+
+<h4>Current Users</h4>
+
+<table class="table table-condensed">
+ <thead>
+   <th>
+     User Name:
+   </th>
+   <th>
+     User Email:
+   </th>
+ </thead>
+ <tbody>
+   <% @users.each do |user| %>
+     <tr>
+       <td>
+         Random
+       </td>
+       <td>
+         <%= user.email %>
+       </td>
+     </tr>
+   <% end %>
+ </tbody>
+</table>
